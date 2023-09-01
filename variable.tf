@@ -43,10 +43,36 @@ variable "env_file_name" {
 
 }
 
-
-
 variable "env_file_location" {
   type        = string
   description = "env file location in our local computer or pwd "
   default     = "./rentzone-github.env"
+}
+
+#ECS VARIABLES
+
+variable "cpu_architecture" {
+  type        = string
+  description = "ecs cpu architecture "
+  default     = "ARM64"
+}
+
+variable "container_image" {
+  type        = string
+  description = "rentzone image stored in amazon ecr "
+  default     = "612500737416.dkr.ecr.us-east-1.amazonaws.com/rentzone-app:latest"
+}
+
+#Route53 variables
+
+variable "domain_name" {
+  type        = string
+  description = "Hosted Zone or domain name "
+  default     = "wiz-obi.com"
+}
+
+variable "record_name" {
+  type        = string
+  description = "sub domain name "
+  default     = "www"
 }
