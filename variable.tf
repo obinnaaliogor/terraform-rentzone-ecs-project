@@ -10,7 +10,7 @@ variable "region" {
 variable "profile" {
   type        = string
   description = "IAM user credential executing the terraform script"
-  default     = "wiz"
+  default     = "obinna"
 
 }
 
@@ -25,6 +25,28 @@ variable "environment" {
 variable "project_name" {
   type        = string
   description = "Name of the project"
-  default     = "rentzone-ecs-project"
+  default     = "rentzone-ecs"
 
+}
+
+#s3 bucket variables
+variable "env_file_bucket_name" {
+  type        = string
+  description = "Name of bucket"
+}
+
+
+variable "env_file_name" {
+  type        = string
+  description = "Name of the env file when it is in s3 bucket"
+  default     = "rentzone-github.env"
+
+}
+
+
+
+variable "env_file_location" {
+  type        = string
+  description = "env file location in our local computer or pwd "
+  default     = "./rentzone-github.env"
 }
